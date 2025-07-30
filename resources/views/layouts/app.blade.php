@@ -4,21 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Цифровое наследие Севастополя: 3D-модели памятников">
     <title>@yield('title', config('app.name'))</title>
     @vite(['resources/scss/app.scss'])
 </head>
 
 <body>
-    <header>
-        <div>
-            <a href="{{ url('/') }}">
-                {{ config('app.name', 'LaravelApp') }}
-                <img src="/images/logo.png" alt={{ config('app.name') }}>
-            </a>
-        </div>
-    </header>
+    <x-header :modifier="$headerModifier ?? ''" />
 
-    <main>
+    <main class="main">
         @yield('content')
     </main>
 
