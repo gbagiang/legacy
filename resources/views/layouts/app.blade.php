@@ -13,6 +13,7 @@
         <div>
             <a href="{{ url('/') }}">
                 {{ config('app.name', 'LaravelApp') }}
+                <img src="/images/logo.png" alt={{ config('app.name') }}>
             </a>
         </div>
     </header>

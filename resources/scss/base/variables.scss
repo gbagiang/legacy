@@ -1,0 +1,79 @@
+/* ====================== Шрифты ====================== */
+$font-primary: "Actay", sans-serif; // Основной текст
+$font-heading: "Oswald", sans-serif; // Заголовки
+$font-wide: "Actay Wide", sans-serif; // Акценты
+
+/* ====================== Цвета ====================== */
+// Основные цвета
+$color-bg: #f7f7f7; // Фон сайта
+$color-block: #ffffff; // Фон блоков
+$color-text: #1a1a1a; // Основной текст
+
+// Акцентные цвета
+$color-accent: #25b6da; // Кнопки, ссылки, акценты
+$color-special: #0050b8; // Состояние актива
+// $color-text-muted: #6b7280; // Дополнительный цвет для второстепенного текста
+
+// // Тёмная тема (для future-proofing)
+// $color-bg-dark: #1f2937;
+// $color-text-dark: #e5e7eb;
+
+/* ====================== Тени ====================== */
+$shadow-primary: 0px 0px 16px 0px rgba(0, 0, 0, 0.25);
+// $shadow-hover: 0px 4px 20px 0px rgba(0, 0, 0, 0.3); // Для интерактивных элементов
+
+/* ====================== Отступы ====================== */
+$gap-s: 8px;
+$gap-m: 16px;
+$gap-l: 24px;
+$gap-xl: 40px;
+$gap-xxl: 48px;
+
+// Адаптивные отступы
+$gap-s-mobile: 8px;
+$gap-m-mobile: 12px;
+$gap-l-mobile: 16px;
+$gap-xl-mobile: 32px;
+$gap-xxl-mobile: 40px;
+
+$gap-s-tablet: 8px;
+$gap-m-tablet: 14px;
+$gap-l-tablet: 20px;
+$gap-xl-tablet: 36px;
+$gap-xxl-tablet: 44px;
+
+// /* ====================== Медиа-запросы ====================== */
+// $breakpoint-mobile: 575px;
+// $breakpoint-tablet: 767px;
+// $breakpoint-desktop: 1260px;
+
+// /* ====================== Для 3D (будущая интеграция) ====================== */
+// $z-index-modal: 1000; // Для модалок с 3D-моделями
+// $z-index-overlay: 900; // Для оверлеев
+// $container-3d-width: clamp(300px, 80vw, 1200px); // Размер контейнера для 3D
+// $container-3d-height: clamp(200px, 50vh, 800px);
+
+/* ====================== CSS-переменные для динамики ====================== */
+:root {
+    --gap-s: #{$gap-s};
+    --gap-m: #{$gap-m};
+    --gap-l: #{$gap-l};
+    --gap-xl: #{$gap-xl};
+    --gap-xxl: #{$gap-xxl};
+
+    @media (max-width: 767px) {
+        --gap-s: #{$gap-s-tablet};
+        --gap-m: #{$gap-m-tablet};
+        --gap-l: #{$gap-l-tablet};
+        --gap-xl: #{$gap-xl-tablet};
+        --gap-xxl: #{$gap-xxl-tablet};
+    }
+
+    @media (max-width: 575px) {
+        --gap-s: #{$gap-s-mobile};
+        --gap-m: #{$gap-m-mobile};
+        --gap-l: #{$gap-l-mobile};
+        --gap-xl: #{$gap-xl-mobile};
+        --gap-xxl: #{$gap-xxl-mobile};
+    }
+}

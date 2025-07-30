@@ -1,1 +1,19 @@
-@import "base/fonts";
+@use "base/variables" as vars; // Переменные (шрифты, цвета, отступы)
+@use "base/fonts"; // @font-face для Actay, Oswald, Actay Wide
+@use "base/normalize"; // Сброс стилей
+@use "base/mixin" as mixins; // Миксины
+@use "base/global"; // Глобальные стили (body, html)
+
+@use "components/button"; // Кнопки
+@use "components/header"; // Хедер
+@use "components/footer"; // Футер
+@use "components/appCard"; // Карточка приложения
+@use "components/directionCard"; // Карточка направления
+
+// @use "layouts/aboutSlice"; // Секция "О проекте"
+// @use "layouts/formSlice"; // Форма
+// @use "layouts/heroSlice"; // Hero-секция
+// @use "layouts/tapeSlice"; // Лента
+// @use "layouts/videoSlice"; // Видео-секция
+
+// @use 'pages/home'; // Раскомментировать, когда добавите _home.scss

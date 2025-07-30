@@ -1,0 +1,93 @@
+@use "./variables" as vars; // Исправлен путь: ../variables, так как variables.scss в base/
+@use "./mixin" as mixins; // Импорт миксинов типографики
+
+/* ====================== БАЗОВЫЕ СТИЛИ ====================== */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%; // Для Safari
+    -webkit-font-smoothing: antialiased; // Улучшает рендеринг шрифтов
+    -moz-osx-font-smoothing: grayscale; // Для Firefox
+}
+
+body {
+    font-family: vars.$font-primary; // Actay
+    font-size: clamp(16px, 1.5vw + 0.5rem, 20px); // Адаптивно
+    color: vars.$color-text;
+    background: vars.$color-bg;
+    margin: 0;
+    padding: clamp(16px, 2vw, 20px) clamp(12px, 1.5vw, 16px)
+        clamp(32px, 4vw, 40px); // Адаптивные отступы
+    min-height: 100vh;
+    overflow-x: auto; // Исправлено для предотвращения скрытия контента
+    display: flex;
+    flex-direction: column;
+    row-gap: vars.$gap-xxl; // SCSS-переменная вместо CSS
+}
+
+/* ====================== ТИПОГРАФИКА ====================== */
+h1 {
+    @include mixins.heading-1;
+}
+
+h2 {
+    @include mixins.heading-2;
+}
+
+h3 {
+    @include mixins.heading-3;
+}
+
+p {
+    @include mixins.paragraph;
+}
+
+a {
+    color: vars.$color-text;
+    text-decoration: none; // Улучшение: убрана подчёркивание для UX
+    -webkit-transition: color 0.3s ease; // Префикс для Safari
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: vars.$color-accent;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        // Доступность
+        transition: none;
+    }
+}
+
+/* ====================== ОБЩИЕ КЛАССЫ ====================== */
+.wrapper {
+    max-width: clamp(960px, 90vw, 1180px); // Адаптивная ширина
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 vars.$gap-m; // Отступы для контента
+}
+
+.section {
+    padding: vars.$gap-m 0;
+}
+
+.section-title {
+    @include mixins.heading-2;
+}
+
+/* ====================== УТИЛИТЫ ====================== */
+.hidden {
+    display: none !important;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* ====================== МЕДИА ====================== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; // Изменено на contain для сохранения контента
+}
