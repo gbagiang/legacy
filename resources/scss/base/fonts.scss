@@ -1,0 +1,32 @@
+/* ====================== Actay (Regular) ====================== */
+@font-face {
+    font-family: "Actay";
+    src: local("Actay"), url("/fonts/Actay.woff2") format("woff2"),
+        url("/fonts/Actay.woff") format("woff"),
+        url("/fonts/Actay.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ====================== Actay Wide ====================== */
+@font-face {
+    font-family: "Actay Wide";
+    src: local("Actay Wide"), url("/fonts/ActayWide.woff2") format("woff2"),
+        url("/fonts/ActayWide.woff") format("woff"),
+        url("/fonts/ActayWide.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ====================== Oswald ====================== */
+@font-face {
+    font-family: "Oswald";
+    src: local("Oswald"), url("/fonts/Oswald.woff2") format("woff2"),
+        url("/fonts/Oswald.woff") format("woff"),
+        url("/fonts/Oswald.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
