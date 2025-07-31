@@ -1,92 +1,87 @@
 @use "./variables" as vars;
 
-// Миксины для заголовков/текста с fluid typography
-
 @mixin heading-1 {
     font-family: vars.$font-heading; // Oswald
-    font-size: clamp(32px, 4vw + 1rem, 48px); // Адаптивно: min 32px, max 48px
-    line-height: 110%; // Улучшено для читаемости
+    font-size: clamp(32px, 4vw + 1rem, 48px);
+    line-height: 110%;
     font-weight: 400;
     color: vars.$color-text;
     margin-bottom: vars.$gap-l;
     text-transform: uppercase;
 
-    @media (max-width: 991px) {
-        // Tablet
+    @media (max-width: vars.$breakpoint-tablet) {
         font-size: clamp(28px, 3.5vw + 1rem, 40px);
     }
-    @media (max-width: 575px) {
-        // Mobile
+    @media (max-width: vars.$breakpoint-mobile) {
         font-size: clamp(24px, 3vw + 1rem, 32px);
     }
 }
 
 @mixin heading-2 {
-    font-family: vars.$font-heading; // Oswald
-    font-size: clamp(24px, 3vw + 1rem, 36px); // Fluid
+    font-family: vars.$font-heading;
+    font-size: clamp(24px, 3vw + 1rem, 36px);
     line-height: 110%;
     font-weight: 400;
     color: vars.$color-text;
     margin-bottom: vars.$gap-xl;
     text-transform: uppercase;
 
-    @media (max-width: 991px) {
+    @media (max-width: vars.$breakpoint-tablet) {
         font-size: clamp(20px, 2.5vw + 1rem, 32px);
     }
-    @media (max-width: 575px) {
+    @media (max-width: vars.$breakpoint-mobile) {
         font-size: clamp(18px, 2vw + 1rem, 24px);
     }
 }
 
 @mixin heading-3 {
-    font-family: vars.$font-heading; // Oswald
-    font-size: clamp(18px, 2vw + 1rem, 24px); // Fluid
+    font-family: vars.$font-heading;
+    font-size: clamp(18px, 2vw + 1rem, 24px);
     line-height: 110%;
     font-weight: 400;
     color: vars.$color-text;
 
-    @media (max-width: 991px) {
+    @media (max-width: vars.$breakpoint-tablet) {
         font-size: clamp(16px, 1.8vw + 1rem, 20px);
     }
-    @media (max-width: 575px) {
+    @media (max-width: vars.$breakpoint-mobile) {
         font-size: clamp(14px, 1.5vw + 1rem, 18px);
     }
 }
 
 @mixin paragraph {
     font-family: vars.$font-primary; // Actay
-    font-size: clamp(16px, 1.5vw + 0.5rem, 20px); // Fluid
-    line-height: 140%; // Улучшено для читаемости текста
+    font-size: clamp(16px, 1.5vw + 0.5rem, 20px);
+    line-height: 140%;
     font-weight: 400;
     color: vars.$color-text;
 
-    @media (max-width: 575px) {
+    @media (max-width: vars.$breakpoint-mobile) {
         font-size: clamp(14px, 1.2vw + 0.5rem, 16px);
     }
 }
 
 @mixin button-text {
     font-family: vars.$font-heading; // Oswald
-    font-size: clamp(16px, 1.5vw + 0.5rem, 20px); // Fluid
+    font-size: clamp(16px, 1.5vw + 0.5rem, 20px);
     font-weight: 400;
-    line-height: 120%; // Улучшено
+    line-height: 120%;
     text-transform: uppercase;
 
-    @media (max-width: 575px) {
+    @media (max-width: vars.$breakpoint-mobile) {
         font-size: clamp(14px, 1.2vw + 0.5rem, 16px);
     }
 }
 
-// Дополнительный mixin для Actay Wide (если нужно для акцентов)
 @mixin wide-text {
     font-family: vars.$font-wide; // Actay Wide
-    font-size: clamp(18px, 2vw + 1rem, 24px); // Fluid
+    font-size: clamp(18px, 2vw + 1rem, 24px);
     line-height: 110%;
     font-weight: 400;
     color: vars.$color-text;
     text-transform: uppercase;
 
-    @media (max-width: 575px) {
+    @media (max-width: vars.$breakpoint-mobile) {
         font-size: clamp(16px, 1.5vw + 1rem, 20px);
     }
 }
