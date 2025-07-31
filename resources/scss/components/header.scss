@@ -1,5 +1,5 @@
 @use "../base/variables" as vars;
-@use "../base/mixin" as typo;
+@use "../base/mixin" as mixins;
 
 .header {
     border-radius: 20px;
@@ -88,7 +88,7 @@
         text-decoration: none;
         -webkit-transition: color 0.3s ease;
         transition: color 0.3s ease;
-        @include typo.paragraph; // Перемещено в конец
+        @include mixins.paragraph; // Перемещено в конец
 
         &:hover,
         &:focus,

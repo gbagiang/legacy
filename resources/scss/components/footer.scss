@@ -1,5 +1,5 @@
 @use "../base/variables" as vars;
-@use "../base/mixin" as typo;
+@use "../base/mixin" as mixins;
 
 .footer {
     border-radius: 30px;
@@ -75,7 +75,7 @@
 
     &__title {
         font-family: vars.$font-wide;
-        @include typo.paragraph; // Перемещено в конец
+        @include mixins.paragraph; // Перемещено в конец
     }
 
     &__list {
@@ -105,7 +105,7 @@
         opacity: 0.5;
         -webkit-transition: color 0.3s, opacity 0.3s;
         transition: color 0.3s, opacity 0.3s;
-        @include typo.paragraph;
+        @include mixins.paragraph;
 
         &:hover,
         &:focus,
@@ -121,7 +121,7 @@
         text-align: left;
         opacity: 0.5;
         max-width: 180px;
-        @include typo.heading-3;
+        @include mixins.heading-3;
 
         @media (max-width: vars.$breakpoint-mobile) {
             font-size: clamp(14px, 1.5vw + 1rem, 16px);
@@ -145,7 +145,7 @@
     }
 
     &__copyright {
-        @include typo.paragraph;
+        @include mixins.paragraph;
     }
 
     @media (prefers-reduced-motion: reduce) {
