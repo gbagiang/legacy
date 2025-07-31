@@ -1,0 +1,89 @@
+@use "../base/variables" as vars;
+@use "../base/mixin" as mixins;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(16px, 2vw, 24px); // Адаптивный отступ
+    padding: vars.$gap-s vars.$gap-l;
+    background: vars.$color-block;
+    color: vars.$color-text;
+    border: none;
+    border-radius: 10px;
+    box-shadow: vars.$shadow-primary;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-transition: background 0.2s ease, color 0.2s ease,
+        box-shadow 0.2s ease, opacity 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+        opacity 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        background: vars.$color-accent;
+        color: #fff;
+        opacity: 1; // Улучшено для читаемости
+
+        .button__icon {
+            transform: translateX(4px);
+            color: #fff;
+        }
+    }
+
+    // Вариации
+    &--primary {
+        background: vars.$color-accent;
+        color: #fff;
+
+        &:hover,
+        &:focus-visible {
+            background: vars.$color-special;
+            box-shadow: vars.$shadow-hover;
+        }
+    }
+
+    // &--secondary {
+    //     background: transparent;
+    //     border: 2px solid vars.$color-accent;
+    //     color: vars.$color-accent;
+
+    //     &:hover,
+    //     &:focus-visible {
+    //         background: vars.$color-accent;
+    //         color: #fff;
+    //     }
+    // }
+
+    // Состояния
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    &__icon {
+        margin-left: 0;
+        -webkit-transition: transform 0.2s ease, color 0.2s ease;
+        transition: transform 0.2s ease, color 0.2s ease;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+    &__text {
+        @include mixins.button-text;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &,
+        &__icon {
+            transition: none;
+        }
+    }
+
+    @media (max-width: vars.$breakpoint-mobile) {
+        padding: vars.$gap-s vars.$gap-m;
+        gap: clamp(12px, 1.5vw, 16px);
+    }
+}
