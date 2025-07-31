@@ -1,0 +1,156 @@
+@use "../base/variables" as vars;
+@use "../base/mixin" as typo;
+
+.footer {
+    border-radius: 30px;
+    box-shadow: vars.$shadow-primary;
+    background: vars.$color-block;
+    padding: vars.$gap-xl vars.$gap-m;
+    max-width: clamp(960px, 90vw, 1212px);
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: vars.$z-index-overlay - 1;
+
+    &__cnt {
+        max-width: clamp(900px, 88vw, 1180px);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: vars.$gap-xl;
+    }
+
+    &__hero {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: vars.$gap-l;
+
+        @media (max-width: vars.$breakpoint-mobile) {
+            flex-direction: column;
+            align-items: center;
+            gap: vars.$gap-xl;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            max-width: clamp(40px, 5vw, 64px);
+            height: auto;
+            cursor: pointer;
+            -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+
+            &:hover,
+            &:focus {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: vars.$gap-xl;
+        justify-content: center;
+
+        @media (max-width: vars.$breakpoint-mobile) {
+            gap: vars.$gap-l;
+            width: 100%;
+        }
+    }
+
+    &__block {
+        min-width: 115px;
+        display: flex;
+        flex-direction: column;
+        gap: vars.$gap-l;
+
+        @media (max-width: vars.$breakpoint-mobile) {
+            align-items: center;
+        }
+    }
+
+    &__title {
+        font-family: vars.$font-wide;
+        @include typo.paragraph; // Перемещено в конец
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: vars.$gap-m;
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: vars.$breakpoint-mobile) {
+            align-items: center;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+            font-size: inherit;
+            line-height: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        opacity: 0.5;
+        -webkit-transition: color 0.3s, opacity 0.3s;
+        transition: color 0.3s, opacity 0.3s;
+        @include typo.paragraph;
+
+        &:hover,
+        &:focus,
+        &--active {
+            color: vars.$color-accent;
+            opacity: 1;
+            outline: none;
+        }
+    }
+
+    &__txt {
+        text-transform: lowercase;
+        text-align: left;
+        opacity: 0.5;
+        max-width: 180px;
+        @include typo.heading-3;
+
+        @media (max-width: vars.$breakpoint-mobile) {
+            font-size: clamp(14px, 1.5vw + 1rem, 16px);
+            text-align: center;
+            align-self: center;
+            max-width: 100%;
+        }
+    }
+
+    &__copy {
+        border-top: 1px solid rgb(26, 26, 26);
+        margin-top: vars.$gap-xl;
+        padding: vars.$gap-xl 0 0;
+        text-align: center;
+        opacity: 0.5;
+
+        @media (max-width: vars.$breakpoint-mobile) {
+            margin-top: vars.$gap-l;
+            padding: vars.$gap-l 0 0;
+        }
+    }
+
+    &__copyright {
+        @include typo.paragraph;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__link {
+            transition: none;
+        }
+    }
+}

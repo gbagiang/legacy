@@ -1,25 +1,22 @@
 @use "../base/variables" as vars;
 @use "../base/mixin" as typo;
 
-// 🎨 Основные стили блока header
 .header {
     border-radius: 20px;
     box-shadow: vars.$shadow-primary;
     background: vars.$color-block;
     padding: vars.$gap-m;
-    max-width: clamp(960px, 90vw, 1212px); // Адаптивная ширина
+    max-width: clamp(960px, 90vw, 1212px);
     width: 100%;
     margin: 0 auto;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: vars.$z-index-overlay;
 
-    // Вариация для главной страницы
     &--hero {
         box-shadow: none;
     }
 
-    // Контейнер для центрирования
     &__container {
         max-width: clamp(900px, 88vw, 1180px);
         margin: 0 auto;
@@ -29,13 +26,12 @@
         gap: vars.$gap-m;
     }
 
-    // 🔹 Логотип
     &__logo {
         display: flex;
         align-items: center;
 
         img {
-            max-width: clamp(40px, 6vw, 64px); // Адаптивно
+            max-width: clamp(40px, 6vw, 64px);
             height: auto;
             cursor: pointer;
             -webkit-transition: opacity 0.3s ease-in-out;
@@ -48,7 +44,6 @@
         }
     }
 
-    // 🔹 Навигация
     &__nav {
         -webkit-transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
         transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
@@ -67,8 +62,8 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                z-index: 1000;
-                overflow-y: auto; // Для прокрутки на мобильных
+                z-index: vars.$z-index-modal;
+                overflow-y: auto;
                 animation: burgerExpand 0.4s ease-in-out forwards;
             }
         }
@@ -89,11 +84,11 @@
     }
 
     &__link {
-        @include typo.paragraph; // Используем миксин для консистентности
         color: vars.$color-text;
         text-decoration: none;
         -webkit-transition: color 0.3s ease;
         transition: color 0.3s ease;
+        @include typo.paragraph; // Перемещено в конец
 
         &:hover,
         &:focus,
@@ -102,7 +97,6 @@
         }
     }
 
-    // 🔹 Бургер-меню
     &__burger {
         display: none;
         width: 40px;
@@ -111,7 +105,7 @@
         background: none;
         border: none;
         cursor: pointer;
-        z-index: 1002;
+        z-index: vars.$z-index-modal + 1;
 
         span {
             display: block;

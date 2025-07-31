@@ -1,8 +1,8 @@
+@extends('layouts.app')
+
 @php
     $headerModifier = 'header--hero';
 @endphp
-
-@extends('layouts.app')
 
 @section('title', 'Цифровое наследие')
 

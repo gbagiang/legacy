@@ -16,11 +16,7 @@
         @yield('content')
     </main>
 
-    <footer>
-        <div>
-            &copy; {{ date('Y') }} {{ config('app.name') }}. Все права защищены.
-        </div>
-    </footer>
+    <x-footer />
 
     @vite(['resources/js/app.js'])
 </body>
