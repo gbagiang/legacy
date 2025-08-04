@@ -10,12 +10,13 @@
 </head>
 
 <body>
-    <x-header :modifier="$headerModifier ?? ''" />
 
+    @if (!($isHeroSlice ?? false))
+        <x-header />
+    @endif
     <main class="main">
         @yield('content')
     </main>
-
     <x-footer />
 
     @vite(['resources/js/app.js'])
