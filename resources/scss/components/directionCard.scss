@@ -1,0 +1,20 @@
+@use "../base/variables" as vars;
+@use "../base/mixin" as mixins;
+
+.directionCard {
+    max-width: 580px;
+    text-align: justify;
+
+    &__title {
+        @include mixins.heading-3;
+    }
+
+    &__info {
+        margin-top: vars.$gap-m;
+        @include mixins.paragraph;
+    }
+
+    &__button {
+        margin-top: vars.$gap-m;
+    }
+}
