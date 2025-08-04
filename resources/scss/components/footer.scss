@@ -10,7 +10,6 @@
     width: 100%;
     margin: 0 auto;
     position: relative;
-    z-index: vars.$z-index-overlay - 1;
 
     &__cnt {
         max-width: clamp(900px, 88vw, 1180px);
