@@ -2,7 +2,7 @@
 
 <header class="header {{ $modifier }}"
     @if ($modifier) aria-label="Header {{ $modifier }}" @endif>
-    <div class="header__container wrapper">
+    <div class="header__container ">
         <a href="{{ route('home') }}" class="header__logo" aria-label="Главная страница">
             <img src="/images/logo.png" alt="Логотип Цифровое наследие Севастополя">
         </a>
