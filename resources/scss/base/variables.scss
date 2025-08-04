@@ -12,7 +12,7 @@ $color-text: #1a1a1a; // Основной текст
 // Акцентные цвета
 $color-accent: #25b6da; // Кнопки, ссылки, акценты
 $color-special: #0050b8; // Состояние актива
-// $color-text-muted: #6b7280; // Дополнительный цвет для второстепенного текста
+$color-text-muted: #6b7280; // Дополнительный цвет для второстепенного текста
 
 // // Тёмная тема (для future-proofing)
 // $color-bg-dark: #1f2937;
@@ -48,8 +48,8 @@ $breakpoint-tablet: 767px;
 // $breakpoint-desktop: 1260px;
 
 // /* ====================== Для 3D (будущая интеграция) ====================== */
-// $z-index-modal: 1000; // Для модалок с 3D-моделями
-// $z-index-overlay: 900; // Для оверлеев
+$z-index-modal: 1000; // Для модалок с 3D-моделями
+$z-index-overlay: 900; // Для оверлеев
 // $container-3d-width: clamp(300px, 80vw, 1200px); // Размер контейнера для 3D
 // $container-3d-height: clamp(200px, 50vh, 800px);
 
@@ -77,6 +77,3 @@ $breakpoint-tablet: 767px;
 //         --gap-xxl: #{$gap-xxl-mobile};
 //     }
 // }
-
-$z-index-overlay: 1000;
-$z-index-modal: 1001;

@@ -15,9 +15,8 @@ body {
     font-size: clamp(16px, 1.5vw + 0.5rem, 20px); // Адаптивно
     color: vars.$color-text;
     background: vars.$color-bg;
-    margin: 0;
-    padding: clamp(16px, 2vw, 20px) clamp(12px, 1.5vw, 16px)
-        clamp(32px, 4vw, 40px); // Адаптивные отступы
+    margin: 0px;
+    padding: 20px 16px 20px;
     min-height: 100vh;
     overflow-x: auto; // Исправлено для предотвращения скрытия контента
     display: flex;
@@ -60,7 +59,7 @@ a {
 
 /* ====================== ОБЩИЕ КЛАССЫ ====================== */
 .wrapper {
-    max-width: clamp(960px, 90vw, 1180px); // Адаптивная ширина
+    max-width: clamp(960px, 90vw, 1212px); // Адаптивная ширина
     width: 100%;
     margin: 0 auto;
     padding: 0 vars.$gap-m; // Отступы для контента
