@@ -1,0 +1,61 @@
+@use "../base/variables" as vars;
+@use "../base/mixin" as mixins;
+
+.heroSlice {
+    background: url("/public/images/hero.jpeg") center/cover no-repeat;
+    overflow: hidden;
+    position: relative;
+    margin: -20px -16px 20px;
+    height: 100vh;
+    padding: 0 vars.$gap-m;
+    -webkit-background-size: cover;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: clamp(600px, 80vh, 760px);
+        padding-top: vars.$gap-m;
+        max-width: clamp(960px, 90vw, 1212px) !important;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: vars.$gap-l;
+        z-index: vars.$z-index-overlay -1;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 0 vars.$gap-m;
+    }
+
+    &__title {
+        color: #fff !important;
+        max-width: 630px;
+        margin: 0;
+        @include mixins.heading-1;
+    }
+
+    &__button {
+        box-shadow: 0px 0px 16px 0px rgba(37, 182, 218, 0.75);
+        margin-top: 0;
+    }
+
+    @media (max-width: vars.$breakpoint-tablet) {
+        height: auto;
+        padding: 0 vars.$gap-s;
+    }
+
+    @media (max-width: vars.$breakpoint-mobile) {
+        padding: 0 vars.$gap-s;
+        &__title {
+            font-size: clamp(24px, 6vw, 36px); // Адаптивно
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__button {
+            transition: none;
+        }
+    }
+}
