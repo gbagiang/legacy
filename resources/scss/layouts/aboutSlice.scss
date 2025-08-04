@@ -1,0 +1,51 @@
+@use "../base/variables" as vars;
+@use "../base/mixin" as mixins;
+
+.about {
+    &__title {
+        margin-bottom: vars.$gap-l;
+    }
+
+    &__cnt {
+        display: flex;
+        justify-content: space-between;
+        gap: vars.$gap-m;
+        position: relative;
+
+        @media (max-width: vars.$breakpoint-tablet) {
+            flex-direction: column;
+            gap: vars.$gap-l;
+        }
+    }
+
+    &__subtitle {
+        max-width: clamp(360px, 40vw, 480px);
+        position: sticky;
+        height: min-content;
+        top: 20px;
+        z-index: 10;
+        margin-bottom: 0;
+        -webkit-position: sticky; // Для старых Safari
+        @include mixins.heading-2;
+
+        &-m {
+            color: vars.$color-accent;
+        }
+
+        @media (max-width: 959px) {
+            max-width: clamp(300px, 35vw, 368px);
+        }
+
+        @media (max-width: vars.$breakpoint-tablet) {
+            position: relative;
+            top: 0;
+            max-width: 100%;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: vars.$gap-xl;
+    }
+}
