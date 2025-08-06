@@ -2,7 +2,6 @@
 @use "../base/mixin" as mixins;
 
 .about {
-    background: aqua;
     &__title {
         margin-bottom: vars.$gap-l;
     }
