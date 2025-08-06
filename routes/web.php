@@ -11,13 +11,13 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/monumentsPage', function () {
-    return view('monumentsPage');
+    return view('pages.monumentsPage');
 })->name('monumentsPage');
 
 Route::get('/newsPage', function () {
-    return view('newsPage');
+    return view('pages.newsPage');
 })->name('newsPage');
 
 Route::get('/appsPage', function () {
-    return view('appsPage');
+    return view('pages.appsPage');
 })->name('appsPage');

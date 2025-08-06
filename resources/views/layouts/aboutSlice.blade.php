@@ -1,4 +1,4 @@
-<section class="aboutSlice {{ $modifier ?? '' }}" aria-labelledby="aboutSliceTitle">
+<section class="about {{ $modifier ?? '' }}" aria-labelledby="aboutSliceTitle">
     <div class="wrapper">
         <h2 id="aboutSliceTitle" class="about__title section-title">{{ $title ?? '#очемпроект' }}</h2>
         <div class="about__cnt">
